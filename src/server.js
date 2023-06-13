@@ -2,8 +2,9 @@ const readline = require('readline');
 const os = require('os');
 const path = require('path');
 const fs = require('fs');
+const { dotNotationToObject } = require('@cocreate/utils');
 
-module.exports = async function (items, processEnv = true, updateGlobal = true) {
+module.exports = async function (items, env = true, global = true) {
     async function promptForInput(question) {
         const rl = readline.createInterface({
             input: process.stdin,
@@ -34,20 +35,24 @@ module.exports = async function (items, processEnv = true, updateGlobal = true) 
 
     let config = {};
     let update = false;
+    let variables = {};
 
     async function getConfig(items) {
-        if (!Array.isArray(items)) {
-            items = [items];
-        }
-        for (let i = 0; i < items.length; i++) {
-            let { key, value, prompt, choices } = items[i];
-            if (!key) {
+        for (let key of Object.keys(items)) {
+            let { value, prompt, choices, variable } = items[key];
+
+            const placeholders = key.match(/{{\s*([\w\W]+?)\s*}}/g);
+            if (placeholders && placeholders.length) {
+                for (let placeholder of placeholders) {
+                    placeholder.trim()
+                    if (variables[placeholder])
+                        key = key.replace(placeholder, variables[placeholder])
+                }
+            }
+
+            if (choices) {
                 if (!prompt && prompt !== '' || !choices) continue;
                 for (let choice of Object.keys(choices)) {
-                    // if (!Array.isArray(choiceItems)) {
-                    //     choiceItems = [choiceItems];
-                    // }
-                    // for (let choice of choiceItems) {
                     let choiceKey = choices[choice].key
                     if (process.env[choiceKey]) {
                         config[choiceKey] = process.env[choiceKey];
@@ -61,16 +66,19 @@ module.exports = async function (items, processEnv = true, updateGlobal = true) 
                         return;
                     }
                 }
-                // }
+
                 const answer = await promptForInput(prompt || `${key}: `);
                 const choice = choices[answer];
                 if (choice) {
                     await getConfig(choice);
                 }
+            } else if (variable) {
+                variables[`{{${key}}}`] = value || await promptForInput(prompt || `${key}: `);
             } else {
+                // TODO: handle dotnotation
                 if (value || value === "") {
                     config[key] = value;
-                    if (updateGlobal)
+                    if (global)
                         update = true;
                 } else if (process.env[key]) {
                     config[key] = process.env[key];
@@ -81,9 +89,9 @@ module.exports = async function (items, processEnv = true, updateGlobal = true) 
                         config[key] = globalConfig[key];
                     } else if (prompt || prompt === '') {
                         config[key] = await promptForInput(prompt || `${key}: `);
-                        if (updateGlobal) update = true;
+                        if (global) update = true;
                     }
-                    if (processEnv) {
+                    if (env) {
                         if (typeof config[key] === 'object')
                             process.env[key] = JSON.stringify(config[key]);
                         else
@@ -110,10 +118,9 @@ module.exports = async function (items, processEnv = true, updateGlobal = true) 
         await getConfig(items);
 
         if (update) {
-            const updatedGlobalConfig = filterEmptyValues({
-                ...globalConfig,
-                ...config
-            });
+            let updatedGlobalConfig = filterEmptyValues(
+                dotNotationToObject(config, globalConfig)
+            );
 
             const globalConfigString = `module.exports = ${JSON.stringify(updatedGlobalConfig, null, 2)};`;
             fs.writeFileSync(globalConfigPath, globalConfigString);
