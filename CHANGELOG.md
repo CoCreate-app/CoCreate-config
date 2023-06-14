@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.0...v1.0.1) (2023-06-14)
+
+
+### Bug Fixes
+
+* update action to config typo ([d13ef01](https://github.com/CoCreate-app/CoCreate-config/commit/d13ef011b037d9c6b0aece263ea30ac4c1f08df9))
+
 # 1.0.0 (2023-06-13)
 
 
