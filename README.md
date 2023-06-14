@@ -1,12 +1,12 @@
-# CoCreate-action
+# CoCreate-config
 
-A convenient chain handler allows user to chain multiple CoCreate components together. When one action is complete next one will start. The sequence goes untill all config completed. Grounded on Vanilla javascript, easily configured using HTML5 attributes and/or JavaScript API. Take it for a spin in our [playground!](https://cocreate.app/docs/config)
+A convenient chain handler allows user to chain multiple CoCreate components together. When one config is complete next one will start. The sequence goes untill all config completed. Grounded on Vanilla javascript, easily configured using HTML5 attributes and/or JavaScript API. Take it for a spin in our [playground!](https://cocreate.app/docs/config)
 
 ![minified](https://img.badgesize.io/https://cdn.cocreate.app/config/latest/CoCreate-config.min.js?style=flat-square&label=minified&color=orange)
 ![gzip](https://img.badgesize.io/https://cdn.cocreate.app/config/latest/CoCreate-config.min.js?compression=gzip&style=flat-square&label=gzip&color=yellow)
 ![brotli](https://img.badgesize.io/https://cdn.cocreate.app/config/latest/CoCreate-config.min.js?compression=brotli&style=flat-square&label=brotli)
-![GitHub latest release](https://img.shields.io/github/v/release/CoCreate-app/CoCreate-action?style=flat-square)
-![License](https://img.shields.io/github/license/CoCreate-app/CoCreate-action?style=flat-square)
+![GitHub latest release](https://img.shields.io/github/v/release/CoCreate-app/CoCreate-config?style=flat-square)
+![License](https://img.shields.io/github/license/CoCreate-app/CoCreate-config?style=flat-square)
 ![Hiring](https://img.shields.io/static/v1?style=flat-square&label=&message=Hiring&color=blueviolet)
 
 ![CoCreate-config](https://cdn.cocreate.app/docs/CoCreate-config.gif)
