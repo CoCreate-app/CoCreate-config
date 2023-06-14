@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.3...v1.0.4) (2023-06-14)
+
+
+### Bug Fixes
+
+* handling of choices ([6b1844d](https://github.com/CoCreate-app/CoCreate-config/commit/6b1844d108ec4a679c44a4b3fa694841ff2161e6))
+
 ## [1.0.3](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.2...v1.0.3) (2023-06-14)
 
 
