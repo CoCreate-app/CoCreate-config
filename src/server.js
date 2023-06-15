@@ -117,5 +117,5 @@ module.exports = async function (items, env = true, global = true) {
         };
     }
 
-    return config;
+    return dotNotationToObject(config);
 }
