@@ -1,3 +1,11 @@
+## [1.0.8](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.7...v1.0.8) (2023-06-15)
+
+
+### Bug Fixes
+
+* Add getValueFromObject to @cocreate/utils ([8c50c0a](https://github.com/CoCreate-app/CoCreate-config/commit/8c50c0a300cc0f6227a02746acfcef981755fb03))
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([8b46bd8](https://github.com/CoCreate-app/CoCreate-config/commit/8b46bd8fbadf2c9a32e90c435e327d56fe193502))
+
 ## [1.0.7](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.6...v1.0.7) (2023-06-15)
 
 
