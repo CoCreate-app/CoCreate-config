@@ -2,7 +2,7 @@ const readline = require('readline');
 const os = require('os');
 const path = require('path');
 const fs = require('fs');
-const { dotNotationToObject } = require('@cocreate/utils');
+const { dotNotationToObject, getValueFromObject } = require('@cocreate/utils');
 
 module.exports = async function (items, env = true, global = true) {
     async function promptForInput(question) {
@@ -58,20 +58,26 @@ module.exports = async function (items, env = true, global = true) {
                     await getConfig(choice);
                 }
             } else if (variable) {
-                variables[`{{${key}}}`] = value || await promptForInput(prompt || `${key}: `);
+                let variableValue = localConfig[key] || globalConfig[key]
+                if (!variableValue) {
+                    variables[`{{${variable}}}`] = value || await promptForInput(prompt || `${variable}: `);
+                } else {
+                    variables[`{{${variable}}}`] = Object.keys(variableValue)[0]
+                }
             } else {
-                // TODO: handle dotnotation
                 if (value || value === "") {
                     config[key] = value;
                     if (global)
                         update = true;
                 } else if (process.env[key]) {
+                    // TODO: if JSON.String object.parse()
                     config[key] = process.env[key];
                 } else {
-                    if (localConfig[key]) {
-                        config[key] = localConfig[key];
-                    } else if (globalConfig[key]) {
-                        config[key] = globalConfig[key];
+                    let localKey, globalKey
+                    if (localKey = getValueFromObject(localConfig, key)) {
+                        config[key] = localKey;
+                    } else if (globalKey = getValueFromObject(globalConfig, key)) {
+                        config[key] = globalKey;
                     } else if (prompt || prompt === '') {
                         config[key] = await promptForInput(prompt || `${key}: `);
                         if (global) update = true;
@@ -117,5 +123,6 @@ module.exports = async function (items, env = true, global = true) {
         };
     }
 
-    return dotNotationToObject(config);
+    config = dotNotationToObject(config);
+    return config
 }
