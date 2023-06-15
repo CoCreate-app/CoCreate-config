@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.8...v1.0.9) (2023-06-15)
+
+
+### Bug Fixes
+
+* Updatae [@cocreate](https://github.com/cocreate) dependnenies to the latest versions ([dfd4bec](https://github.com/CoCreate-app/CoCreate-config/commit/dfd4bec8492745e2a290b3b57e7ab01963fe0c7b))
+
 ## [1.0.8](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.7...v1.0.8) (2023-06-15)
 
 
