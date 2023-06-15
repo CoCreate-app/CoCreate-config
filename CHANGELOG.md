@@ -1,3 +1,17 @@
+## [1.0.7](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.6...v1.0.7) (2023-06-15)
+
+
+### Bug Fixes
+
+* Add getValueFromObject to @cocreate/utils ([cefebf6](https://github.com/CoCreate-app/CoCreate-config/commit/cefebf6f630563f77ac6d997a494d65c00a10dc1))
+
+## [1.0.6](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.5...v1.0.6) (2023-06-15)
+
+
+### Bug Fixes
+
+* return config after dotNotationToObject ([97f0e63](https://github.com/CoCreate-app/CoCreate-config/commit/97f0e633f05d502dac7f88bb0deb216ac5143374))
+
 ## [1.0.5](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.4...v1.0.5) (2023-06-14)
 
 
