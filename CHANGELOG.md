@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.5...v1.0.6) (2023-06-15)
+
+
+### Bug Fixes
+
+* return config after dotNotationToObject ([97f0e63](https://github.com/CoCreate-app/CoCreate-config/commit/97f0e633f05d502dac7f88bb0deb216ac5143374))
+
 ## [1.0.5](https://github.com/CoCreate-app/CoCreate-config/compare/v1.0.4...v1.0.5) (2023-06-14)
 
 
