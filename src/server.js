@@ -51,11 +51,29 @@ module.exports = async function (items, env = true, global = true) {
             }
 
             if (choices) {
-                if (!prompt && prompt !== '' || !choices) continue;
-                const answer = await promptForInput(prompt || `${key}: `);
-                const choice = choices[answer];
-                if (choice) {
-                    await getConfig(choice);
+                if (!prompt && prompt !== '') continue;
+
+                let isAnswered = false
+                for (let choice of Object.keys(choices)) {
+                    let isAnsweredChoice = true
+                    for (let choicekey of Object.keys(choices[choice])) {
+                        let choiceValue = localConfig[choicekey] || globalConfig[choicekey]
+                        if (choiceValue) {
+                            config[choicekey] = choiceValue
+                        } else
+                            isAnsweredChoice = false
+
+                    }
+                    if (isAnsweredChoice)
+                        isAnswered = true
+                }
+
+                if (!isAnswered) {
+                    const answer = await promptForInput(prompt || `${key}: `);
+                    const choice = choices[answer];
+                    if (choice) {
+                        await getConfig(choice);
+                    }
                 }
             } else if (variable) {
                 let variableValue = localConfig[key] || globalConfig[key]
