@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const { dotNotationToObject, getValueFromObject } = require('@cocreate/utils');
 
-module.exports = async function (items, env = true, global = true) {
+module.exports = async function (items, env = true, global = true, configPath = 'CoCreate.config.js') {
     async function promptForInput(question) {
         const rl = readline.createInterface({
             input: process.stdin,
@@ -112,7 +112,7 @@ module.exports = async function (items, env = true, global = true) {
     }
 
     let localConfig = {};
-    const localConfigPath = path.resolve(process.cwd(), 'CoCreate.config.js');
+    const localConfigPath = path.resolve(process.cwd(), configPath);
     if (fs.existsSync(localConfigPath)) {
         localConfig = require(localConfigPath);
     }
