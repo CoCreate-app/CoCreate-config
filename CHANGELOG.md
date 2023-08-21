@@ -1,3 +1,17 @@
+# [1.4.0](https://github.com/CoCreate-app/CoCreate-config/compare/v1.3.0...v1.4.0) (2023-08-21)
+
+
+### Bug Fixes
+
+* /dist/CoCreate.js updated to https://CoCreate.app/dist/CoCreate.js ([d98d3ab](https://github.com/CoCreate-app/CoCreate-config/commit/d98d3abe1a9ae7d05519114283df14149ec8e67e))
+* replace cdn with /dist ([3054826](https://github.com/CoCreate-app/CoCreate-config/commit/3054826225c7d0afd618f93356caf741aa1aa5d2))
+* update file uploader ([99d5aae](https://github.com/CoCreate-app/CoCreate-config/commit/99d5aaed04cc4556fe7325a59b623484553f31c3))
+
+
+### Features
+
+* configPath option to define a custom local config ([c2916b6](https://github.com/CoCreate-app/CoCreate-config/commit/c2916b69ca9bba1902742bbb0d481202819093d4))
+
 # [1.3.0](https://github.com/CoCreate-app/CoCreate-config/compare/v1.2.0...v1.3.0) (2023-08-17)
 
 
