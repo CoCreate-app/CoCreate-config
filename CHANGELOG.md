@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/CoCreate-app/CoCreate-config/compare/v1.5.2...v1.6.0) (2023-10-09)
+
+
+### Features
+
+* Persists config data in the client ([3904abd](https://github.com/CoCreate-app/CoCreate-config/commit/3904abdedd997ae1b47cd6613cdae2405680f96a))
+
 ## [1.5.2](https://github.com/CoCreate-app/CoCreate-config/compare/v1.5.1...v1.5.2) (2023-09-18)
 
 
