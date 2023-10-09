@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/CoCreate-app/CoCreate-config/compare/v1.6.3...v1.6.4) (2023-10-09)
+
+
+### Bug Fixes
+
+* bump dependencies ([ce6ecd8](https://github.com/CoCreate-app/CoCreate-config/commit/ce6ecd84077096a95feae6b4c9f47f00aa1c1b53))
+
 ## [1.6.3](https://github.com/CoCreate-app/CoCreate-config/compare/v1.6.2...v1.6.3) (2023-10-09)
 
 
