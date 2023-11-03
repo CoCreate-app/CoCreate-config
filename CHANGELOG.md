@@ -1,3 +1,11 @@
+## [1.6.7](https://github.com/CoCreate-app/CoCreate-config/compare/v1.6.6...v1.6.7) (2023-11-03)
+
+
+### Bug Fixes
+
+* favicon.ico path ([6862ab1](https://github.com/CoCreate-app/CoCreate-config/commit/6862ab14c119520fbe1e82c81e05449d9393ceff))
+* update dependencies to the lates versions ([ebcc2c9](https://github.com/CoCreate-app/CoCreate-config/commit/ebcc2c973a7a130e8d9390875fbebcf05b2130f7))
+
 ## [1.6.6](https://github.com/CoCreate-app/CoCreate-config/compare/v1.6.5...v1.6.6) (2023-10-25)
 
 
