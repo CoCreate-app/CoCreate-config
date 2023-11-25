@@ -1,3 +1,15 @@
+# [1.9.0](https://github.com/CoCreate-app/CoCreate-config/compare/v1.8.0...v1.9.0) (2023-11-25)
+
+
+### Bug Fixes
+
+* update licensing details ([0384b70](https://github.com/CoCreate-app/CoCreate-config/commit/0384b7042e18ee576d98dd92d32c32c7b0b9fba3))
+
+
+### Features
+
+* upgrade dependencies for latest features and fixes ([8003f7d](https://github.com/CoCreate-app/CoCreate-config/commit/8003f7dbeedcb6a87e4f3031b0e33aa05efc498e))
+
 # [1.8.0](https://github.com/CoCreate-app/CoCreate-config/compare/v1.7.0...v1.8.0) (2023-11-25)
 
 
