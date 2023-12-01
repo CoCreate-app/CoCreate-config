@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/CoCreate-app/CoCreate-config/compare/v1.9.0...v1.10.0) (2023-12-01)
+
+
+### Features
+
+* get config using CoCreate-config ([d6e0b22](https://github.com/CoCreate-app/CoCreate-config/commit/d6e0b2266674c34582cdddc0f36f6836ba1c11f1))
+
 # [1.9.0](https://github.com/CoCreate-app/CoCreate-config/compare/v1.8.0...v1.9.0) (2023-11-25)
 
 
