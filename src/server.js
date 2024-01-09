@@ -2,6 +2,9 @@ const readline = require('readline');
 const os = require('os');
 const path = require('path');
 const fs = require('fs');
+const util = require('node:util');
+const exec = util.promisify(require('node:child_process').exec);
+
 const { dotNotationToObject, getValueFromObject } = require('@cocreate/utils');
 
 /**
@@ -69,6 +72,24 @@ module.exports = async function (items, env = true, global = true, configPath = 
         );
     };
 
+    async function getValue(value) {
+        if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+            return value;
+        } else if (value.$branch) {
+            try {
+                const { stdout } = await exec('git branch --show-current');
+                return value.$branch[stdout.trim()];
+            } catch (error) {
+                console.error(`exec error: ${error}`);
+                // Handle the error or return a default value
+                return null; // or a default value as per your logic
+            }
+        } else {
+            return value;
+        }
+    }
+
+
     let config = {};
     let update = false;
     let variables = {};
@@ -121,6 +142,9 @@ module.exports = async function (items, env = true, global = true, configPath = 
                     variables[`{{${variable}}}`] = Object.keys(variableValue)[0]
                 }
             } else {
+                if (key === 'host')
+                    console.log(key)
+
                 if (value || value === "") {
                     config[key] = value;
                     if (global)
@@ -131,9 +155,9 @@ module.exports = async function (items, env = true, global = true, configPath = 
                 } else {
                     let localKey, globalKey
                     if (localKey = getValueFromObject(localConfig, key)) {
-                        config[key] = localKey;
+                        config[key] = await getValue(localKey);
                     } else if (globalKey = getValueFromObject(globalConfig, key)) {
-                        config[key] = globalKey;
+                        config[key] = await getValue(globalKey);
                     } else if (prompt || prompt === '') {
                         config[key] = await promptForInput(prompt || `${key}: `);
                         if (global) update = true;
