@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/CoCreate-app/CoCreate-config/compare/v1.11.0...v1.12.0) (2024-01-09)
+
+
+### Features
+
+* define config based on current git branch ([27c7fb3](https://github.com/CoCreate-app/CoCreate-config/commit/27c7fb3b1969c94063c2383cfaad352c255599e6))
+
 # [1.11.0](https://github.com/CoCreate-app/CoCreate-config/compare/v1.10.0...v1.11.0) (2024-01-08)
 
 
