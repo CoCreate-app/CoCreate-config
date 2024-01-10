@@ -142,9 +142,6 @@ module.exports = async function (items, env = true, global = true, configPath = 
                     variables[`{{${variable}}}`] = Object.keys(variableValue)[0]
                 }
             } else {
-                if (key === 'host')
-                    console.log(key)
-
                 if (value || value === "") {
                     config[key] = value;
                     if (global)
