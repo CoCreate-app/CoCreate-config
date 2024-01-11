@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/CoCreate-app/CoCreate-config/compare/v1.12.0...v1.12.1) (2024-01-11)
+
+
+### Bug Fixes
+
+* removed test logs ([5956d42](https://github.com/CoCreate-app/CoCreate-config/commit/5956d42fa2b5c1d13a5ab8c45bc5397e50d0e947))
+
 # [1.12.0](https://github.com/CoCreate-app/CoCreate-config/compare/v1.11.0...v1.12.0) (2024-01-09)
 
 
