@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/CoCreate-app/CoCreate-config/compare/v1.13.2...v1.13.3) (2026-01-19)
+
+
+### Bug Fixes
+
+* update worklow ([a892ab3](https://github.com/CoCreate-app/CoCreate-config/commit/a892ab32208f68b809729caf7c386f58fdb3ea61))
+
 ## [1.13.2](https://github.com/CoCreate-app/CoCreate-config/compare/v1.13.1...v1.13.2) (2025-05-01)
 
 
